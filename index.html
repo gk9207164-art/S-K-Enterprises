@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S K Enterprises</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    background: #34495e;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+}
+
+.banner {
+    background: #27ae60;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>S K Enterprises</h1>
+    <p>pankaj market nera by PNB Bank bank, Muzaffarpur</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="banner" id="home">
+    <h2>Tripal, Rassi & Net Specialist in Muzaffarpur</h2>
+    <p>Best quality products at affordable price</p>
+    <button onclick="callNow()">Call Now</button>
+</div>
+
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+        <div class="card">
+            <h3>Tripal (Tarpaulin)</h3>
+            <p>Waterproof aur strong quality tripal available </p>
+        </div>
+
+        <div class="card">
+            <h3>Rassi (Rope)</h3>
+            <p>Majboot aur durable rassi har use ke liye.</p>
+        </div>
+
+        <div class="card">
+            <h3>Plastic Tripal</h3>
+            <p>High quality plastic sheets aur items.</p>
+        </div>
+
+        <div class="card">
+            <h3>Net</h3>
+            <p>Farming aur safety ke liye strong nets.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        S K Enterprises Muzaffarpur aur nearby areas ke customers ko best quality 
+        tripal, rassi, plastic aur net provide karta hai (S K Enterprises). Hum quality, trust aur 
+        reasonable price ke liye jane jate hain. Wholesale aur retail dono available hai.
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Mobile:</strong> 8210289475</p> <!-- Apna number yaha daalo -->
+    <p><strong>Address:</strong> Pankaj Market nera by PNB Bank , Muzaffarpur</p>
+
+    <button onclick="openWhatsApp()">WhatsApp</button>
+
+    <h3>Location</h3>
+    <iframe 
+        src="https://www.google.com/maps?q=Pankaj Market nera by PNB Bank , Muzaffarpur&output=embed"
+        width="100%" height="300" style="border:0;">
+    </iframe>
+</section>
+
+<footer>
+    <p>© 2026 S K Enterprises | All Rights Reserved</p>
+</footer>
+
+<script>
+function callNow() {
+    window.location.href = "tel:8210289475"; // Apna number yaha daalo
+}
+
+function openWhatsApp() {
+    window.open("https://wa.me/918210289475", "_blank"); // Apna number yaha daalo
+}
+</script>
+
+</body>
+</html>
