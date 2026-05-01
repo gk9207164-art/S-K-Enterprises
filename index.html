@@ -1,84 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S K Enterprises</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S K Enterprises | Muzaffarpur</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #27ae60;
+            --light: #f4f4f4;
+        }
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-header {
-    background: #2c3e50;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
+        /* --- Header & Nav --- */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-nav {
-    background: #34495e;
-    padding: 10px;
-    text-align: center;
-}
+        nav {
+            background: #34495e;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+        }
 
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-section {
-    padding: 20px;
-}
+        nav a:hover {
+            color: var(--accent);
+        }
 
-.banner {
-    background: #27ae60;
-    color: white;
-    padding: 40px;
-    text-align: center;
-}
+        /* --- Animated Banner --- */
+        .banner {
+            position: relative;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1350&q=80'); /* Yahan apni shop ki photo ka link daalein */
+            background-size: cover;
+            background-attachment: fixed;
+        }
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
+        .banner h2 { font-size: 2.5rem; margin-bottom: 10px; }
 
-.card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-}
+        /* --- Product Cards with Hover Animation --- */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+        }
 
-button {
-    background: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-align: center;
+            border: none;
+        }
 
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-</style>
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 15px; }
+
+        /* --- Buttons --- */
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #219150;
+            transform: scale(1.05);
+        }
+
+        /* --- Sections --- */
+        section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 40px; position: relative; }
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        footer { background: var(--primary); color: white; text-align: center; padding: 20px; }
+    </style>
 </head>
 
 <body>
 
 <header>
     <h1>S K Enterprises</h1>
-    <p>pankaj market nera by PNB Bank bank, Muzaffarpur</p>
+    <p>Pankaj Market, Near PNB Bank, Muzaffarpur</p>
 </header>
 
 <nav>
@@ -86,74 +147,131 @@ footer {
     <a href="#products">Products</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+   
+</a>
 </nav>
 
 <div class="banner" id="home">
-    <h2>Tripal, Rassi & Net Specialist in Muzaffarpur</h2>
-    <p>Best quality products at affordable price</p>
-    <button onclick="callNow()">Call Now</button>
+    <h2 data-aos="zoom-in">Tripal, Rassi, Net, Tripal cloths Specialist</h2>
+    <p data-aos="fade-up" data-aos-delay="200">Quality that lasts, Prices that fit your budget.</p>
+    <div data-aos="fade-up" data-aos-delay="400">
+        <button onclick="callNow()">Call Now: 8210289475</button>
+    </div>
 </div>
 
 <section id="products">
     <h2>Our Products</h2>
     <div class="products">
-        <div class="card">
-            <h3>Tripal (Tarpaulin)</h3>
-            <p>Waterproof aur strong quality tripal available </p>
+        <div class="card" onclick="openPriceModal('Tripal', '12x12, 15x20, 20x30','₹500 - 2500')" data-aos="fade-up">
+            <img src="https://m.media-amazon.com/images/I/41UCd5OVUkL._AC_.jpg" alt="Tripal">
+            <div class="card-content">
+                <h3>Tripal (Tarpaulin)</h3>
+                <p>Click to check size list</p>
+                <span style="color: var(--accent); font-weight: bold;">check price →</span>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Rassi (Rope)</h3>
-            <p>Majboot aur durable rassi har use ke liye.</p>
+        <div class="card" onclick="openPriceModal('Strong Rope', '5mm, 10, 20', '₹50/kg - ₹200/kg')" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://cpimg.tistatic.com/07746197/b/4/Yellow-Agriculture-HDPE-Rope.jpg" alt="Rope">
+            <div class="card-content">
+                <h3>Rassi (Rope)</h3>
+                <p>Click for weight & price</p>
+                <span style="color:var(--accent); font-weight: bold;">check Price →</span>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Plastic Tripal</h3>
-            <p>High quality plastic sheets aur items.</p>
+        <div class="card" onclick="openPriceModal('Tripal', '12x12, 15x20, 20x30','₹500 - 2500')"data-aos="fade-up" data-aos-delay="200">
+            <img src="https://rukmini1.flixcart.com/image/1500/1500/l2f20sw0/portable-green-house/l/z/k/4-150-green-net-90-uv-protected-for-garden-balcony-with-attached-original-imagdre8daghnpg8.jpeg?q=70" alt="Net">
+            <div class="card-content">
+                <h3>Safety and agriculture Net</h3>
+                <p>Click to check size list</p>
+                 <span style="color: var(--accent); font-weight: bold;">check price →</span>
+                
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Net</h3>
-            <p>Farming aur safety ke liye strong nets.</p>
+         <div class="card" onclick="openPriceModal('Tripal', '12x12, 15x20, 20x30','₹500 - 2500')"data-aos="fade-up" data-aos-delay="300">
+            <img src="https://sc04.alicdn.com/kf/Hd7bcc39792d94e2facabf3bc531a2500b.png" alt="Tripal Cloths">
+            <div class="card-content">
+                <h3>Tripal Cloths</h3>
+                <p>Click to check size list</p>
+                <span style="color: var(--accent); font-weight: bold;">check price →</span>
+            </div>
+         </div>
+
+</section>
+
+<div id="priceModel" class="model">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModel()">&times;</span>
+        <h2 id="modelTitle" style="color: var(--primary);">product Details</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Size Available</th>
+                    <th>Approx Price</th>
+                </tr>
+            </thead>
+            <tbody id="PriceTableBody">
+            </tbody>
+        </table>
+
+        <p style="font-size: 12px; color: #777; margin-top: 15px;">*Note: Price market rate ke hisab badal sakte hain.</p>
+
+
+
+
+<section id="about" style="background: var(--light); border-radius: 20px;" data-aos="fade-right">
+    <h2>About S K Enterprises</h2>
+    <p style="text-align: center; line-height: 1.8; font-size: 1.1rem;">
+        Muzaffarpur ke dil mein sthit, **S K Enterprises** pichle kai saalo se bharosemand quality ke liye jana jata hai. 
+        Hum Wholesale aur Retail dono mein deal karte hain. Hamare products durable aur high-quality material se bane hote hain.
+    </p>
+</section>
+
+<section id="video" data-aos="fade-up">
+    <h2>Watch Our Quality</h2>
+    <div style="text-align:center;">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:15px;" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        S K Enterprises Muzaffarpur aur nearby areas ke customers ko best quality 
-        tripal, rassi, plastic aur net provide karta hai (S K Enterprises). Hum quality, trust aur 
-        reasonable price ke liye jane jate hain. Wholesale aur retail dono available hai.
-    </p>
-</section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Mobile:</strong> 8210289475</p> <!-- Apna number yaha daalo -->
-    <p><strong>Address:</strong> Pankaj Market nera by PNB Bank , Muzaffarpur</p>
-
-    <button onclick="openWhatsApp()">WhatsApp</button>
-
-    <h3>Location</h3>
-    <iframe 
-        src="https://www.google.com/maps?q=Pankaj Market nera by PNB Bank , Muzaffarpur&output=embed"
-        width="100%" height="300" style="border:0;">
-    </iframe>
+<section id="contact" data-aos="flip-left">
+    <h2>Get In Touch</h2>
+    <div style="text-align: center;">
+        <p><strong>Mobile:</strong> 8210289475</p>
+        <p><strong>Address:</strong> Pankaj Market, Near PNB Bank, Muzaffarpur</p>
+        <br>
+        <button onclick="openWhatsApp()" style="background:#25D366;">Chat on WhatsApp</button>
+         <p><strong>Mobile:</strong> 9471070093</p>
+        <br>
+        <button onclick="openWhatsApp()" style="background:#25D366;">Chat on WhatsApp</button>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 S K Enterprises | All Rights Reserved</p>
+    <p>© 2026 S K Enterprises | Designed for Quality</p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-function callNow() {
-    window.location.href = "tel:8210289475"; // Apna number yaha daalo
-}
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 
-function openWhatsApp() {
-    window.open("https://wa.me/918210289475", "_blank"); // Apna number yaha daalo
-}
+    function callNow() {
+        window.location.href = "tel:8210289475";
+    }
+
+    function openWhatsApp() {
+        window.open("https://wa.me/918210289475", "_blank");
+    }
+   
+
 </script>
 
 </body>
